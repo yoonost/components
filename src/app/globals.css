@@ -2,3 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    --palette-success: #16a34a;
+    --palette-warning: #ca8a04;
+    --palette-error: #dc2626;
+    --palette-info: #2563eb;
+}
+
+html.light {
+    --palette-background: #FFFFFF;
+    --palette-primary: #000000;
+    --palette-secondary: #828794;
+    --palette-gray-1: #404452;
+    --palette-gray-2: #828794;
+    --palette-gray-3: #C9CBD1;
+    --palette-gray-4: #E1E3E8;
+    --palette-gray-5: #F2F4F7;
+}
+
+html.dark {
+    --palette-background: #14161A;
+    --palette-primary: #EBECF0;
+    --palette-secondary: #A4A8B2;
+    --palette-gray-1: #D3D6DB;
+    --palette-gray-2: #A4A8B2;
+    --palette-gray-3: #707480;
+    --palette-gray-4: #515561;
+    --palette-gray-5: #282933;
+}
+
+html, body {
+    @apply font-sans text-palette-primary bg-palette-background w-full h-full;
+}
+
+main {
+    @apply p-6;
+}
