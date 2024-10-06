@@ -14,6 +14,12 @@ export const Sidebar = ({ children }: { children: ReactNode }): ReactNode => {
                     <li className="py-2 px-4 hover:bg-palette-gray-4 transition rounded-md">
                         <Link href={"/alert"}>Alert</Link>
                     </li>
+                    <li className="py-2 px-4 hover:bg-palette-gray-4 transition rounded-md">
+                        <Link href={"/button"}>Button</Link>
+                    </li>
+                    <li className="py-2 px-4 hover:bg-palette-gray-4 transition rounded-md">
+                        <Link href={"/link"}>Link</Link>
+                    </li>
                 </ul>
             </div>
             <div className="flex-1 p-10">{children}</div>

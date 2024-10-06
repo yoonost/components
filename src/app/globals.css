@@ -3,10 +3,25 @@
 @tailwind utilities;
 
 html {
-    --palette-success: #16a34a;
-    --palette-warning: #ca8a04;
-    --palette-error: #dc2626;
-    --palette-info: #2563eb;
+    --palette-default-primary: #2563eb;
+    --palette-default-secondary: #1d4ed8;
+    --palette-default-tertiary: #1e40af;
+
+    --palette-success-primary: #16a34a;
+    --palette-success-secondary: #15803d;
+    --palette-success-tertiary: #166534;
+
+    --palette-warning-primary: #ca8a04;
+    --palette-warning-secondary: #a16207;
+    --palette-warning-tertiary: #854d0e;
+
+    --palette-danger-primary: #dc2626;
+    --palette-danger-secondary: #b91c1c;
+    --palette-danger-tertiary: #991b1b;
+
+    --palette-info-primary: #3b82f6;
+    --palette-info-secondary: #2563eb;
+    --palette-info-tertiary: #1d4ed8;
 }
 
 html.light {
@@ -33,8 +48,4 @@ html.dark {
 
 html, body {
     @apply font-sans text-palette-primary bg-palette-background w-full h-full;
-}
-
-main {
-    @apply p-6;
 }
