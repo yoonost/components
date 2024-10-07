@@ -1,5 +1,6 @@
-
 # Dynamic Components for Next.js
+
+[![tests](https://github.com/yoonost/components/actions/workflows/tests.yml/badge.svg)](https://github.com/yoonost/components/actions/workflows/tests.yml)
 
 This repository contains a set of dynamic and reusable components designed for your Next.js web applications. Each component is organized and documented for quick integration and customization.
 

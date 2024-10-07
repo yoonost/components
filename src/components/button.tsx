@@ -5,7 +5,7 @@ import { cn } from '@/libs/utils'
 
 interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'style'> {
     className?: string
-    variant?: 'default' | 'success' | 'danger' | 'primary'
+    variant?: 'default' | 'success' | 'danger' | 'primary' | 'secondary'
     style?: 'filled' | 'outlined'
     size?: 'small' | 'medium' | 'large'
     loading?: boolean
@@ -20,12 +20,14 @@ const variants = cva(
                 success: 'bg-palette-success-primary hover:bg-palette-success-secondary disabled:bg-palette-success-tertiary',
                 danger: 'bg-palette-danger-primary hover:bg-palette-danger-secondary disabled:bg-palette-danger-tertiary',
                 primary: 'bg-palette-gray-5 hover:bg-palette-gray-4 disabled:bg-palette-gray-3',
+                secondary: 'bg-palette-primary hover:bg-palette-gray-1 disabled:bg-palette-gray-2 text-palette-gray-5',
             },
             outlined: {
                 default: 'border-2 border-palette-default-primary hover:bg-palette-default-primary disabled:border-palette-default-secondary',
                 success: 'border-2 border-palette-success-primary hover:bg-palette-success-primary disabled:border-palette-success-secondary',
                 danger: 'border-2 border-palette-danger-primary hover:bg-palette-danger-primary disabled:border-palette-danger-secondary',
                 primary: 'border-2 border-palette-gray-5 hover:bg-palette-gray-5 disabled:border-palette-gray-4',
+                secondary: 'border-2 border-palette-primary hover:bg-palette-primary disabled:border-palette-gray-2 hover:text-palette-gray-5',
             },
             size: {
                 small: 'h-8 px-4',
