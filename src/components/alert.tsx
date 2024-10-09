@@ -16,7 +16,8 @@ interface AlertProps {
     message: string
 }
 
-const filledVariants = cva('', {
+const filledVariants = cva(
+    'flex flex-row items-center rounded-md px-3 py-2.5', {
     variants: {
         colored: {
             success: 'text-palette-gray-1 bg-palette-success-primary',
@@ -39,7 +40,8 @@ const filledVariants = cva('', {
     }
 })
 
-const outlinedVariants = cva('', {
+const outlinedVariants = cva(
+    'flex flex-row items-center rounded-md px-3 py-2.5', {
     variants: {
         colored: {
             success: 'border-2 text-palette-success-primary border-palette-success-primary',
@@ -73,7 +75,7 @@ const AlertIcon = ({ severity, icon }: { severity: 'success' | 'warning' | 'dang
 
 const AlertComponent = ({ className, severity = 'info', variant = 'primary', style = 'filled', icon, title, message }: AlertProps) => {
     return (
-        <div className={cn('flex flex-row items-center rounded-md px-3 py-2.5',
+        <div className={cn(
             style === 'filled' && variant === 'colored' && filledVariants({ colored: severity }),
             style === 'filled' && variant === 'primary' && filledVariants({ primary: severity }),
             style === 'filled' && variant === 'colored-icon' && filledVariants({ 'colored-icon': severity }),
