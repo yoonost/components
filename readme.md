@@ -7,6 +7,7 @@ This repository contains a set of dynamic and reusable components designed for y
 ## Examples
 
 All usage examples are located in the `src/app/*/page.tsx` files, where `*` is the component name. You can refer to these files to learn how to use each component in practice in your application.
+You will also be able to see at a glance what the components in the `examples` folder look like
 
 ## Installation
 
