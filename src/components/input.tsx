@@ -48,4 +48,4 @@ const InputComponent = ({ id, label, desc, severity = 'primary', size = 'medium'
     )
 }
 
-export { InputComponent as Input }
+export { InputComponent as Input, inputVariants, descVariants }
