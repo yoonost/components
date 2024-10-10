@@ -2,7 +2,6 @@
 
 import { ReactNode, useState } from 'react'
 import { InputOtp } from '@/components/input-otp'
-import {Input} from "@/components/input";
 
 export default function Home(): ReactNode {
     const [ code, setCode ] = useState<string>('')
