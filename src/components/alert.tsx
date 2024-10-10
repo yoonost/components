@@ -73,7 +73,16 @@ const AlertIcon = ({ severity, icon }: { severity: 'success' | 'warning' | 'dang
     return false
 }
 
-const AlertComponent = ({ className, severity = 'info', variant = 'primary', style = 'filled', icon, title, message }: AlertProps) => {
+const AlertComponent = ({
+                            className,
+
+                            severity = 'info',
+                            variant = 'primary',
+                            style = 'filled',
+                            icon,
+                            title,
+                            message
+}: AlertProps) => {
     return (
         <div className={cn(
             style === 'filled' && variant === 'colored' && filledVariants({ colored: severity }),

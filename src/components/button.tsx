@@ -38,7 +38,16 @@ const variants = cva(
     }
 );
 
-const ButtonComponent = ({ className, variant = 'default', style = 'filled', size = 'medium', loading = false, ...props }: ButtonProps): ReactNode => {
+const ButtonComponent = ({
+                             className,
+
+                             variant = 'default',
+                             style = 'filled',
+                             size = 'medium',
+                             loading = false,
+
+                             ...props
+}: ButtonProps): ReactNode => {
     return (
         <button className={cn(style === 'filled' ? variants({ filled: variant }) : variants({ outlined: variant }), variants({ size }), className)} disabled={loading} {...props}>
             <ImSpinner8 className={cn('absolute animate-spin', loading ? 'opacity-100' : 'opacity-0', size === 'large' ? 'h-4 w-4' : size === 'medium' ? 'h-3.5 w-3.5' : 'w-3 h-3')} />

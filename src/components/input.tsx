@@ -3,6 +3,11 @@ import { cva } from 'class-variance-authority'
 import { cn } from '@/libs/utils'
 
 interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'id'> {
+    divClassname?: string
+    labelClassName?: string
+    inputClassName?: string
+    descClassName?: string
+
     id?: string
     label?: string
     desc?: string
@@ -38,14 +43,29 @@ const descVariants = cva('text-sm', {
     }
 )
 
-const InputComponent = ({ id, label, desc, severity = 'primary', size = 'medium', ...props }: InputProps): ReactNode => {
+const InputComponent = ({
+                            divClassname,
+                            labelClassName,
+                            inputClassName,
+                            descClassName,
+
+                            id,
+                            label,
+                            desc,
+                            severity = 'primary',
+                            size = 'medium',
+
+                            ...props
+}: InputProps): ReactNode => {
     return (
-        <div className={'flex flex-col space-y-1.5'}>
-            {label && <label className={cn('text-palette-primary text-sm')} htmlFor={id}>{label}</label>}
-            <input id={id} name={id} className={cn(inputVariants({ severity, size }))} {...props} />
-            {desc && <span className={cn(descVariants({ severity }))}>{desc}</span>}
+        <div className={cn('flex flex-col space-y-1.5', divClassname)}>
+            {label && <label className={cn('text-palette-primary text-sm', labelClassName)} htmlFor={id}>{label}</label>}
+            <input id={id} name={id} className={cn(inputVariants({ severity, size }), inputClassName)} {...props} />
+            {desc && <span className={cn(descVariants({ severity }), descClassName)}>{desc}</span>}
         </div>
     )
 }
 
-export { InputComponent as Input }
+InputComponent.displayName = 'Input'
+
+export { InputComponent as Input, inputVariants, descVariants }

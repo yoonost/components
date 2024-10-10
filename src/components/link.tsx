@@ -5,13 +5,23 @@ import { cn } from '@/libs/utils'
 
 interface LinkProps extends NextLinkProps {
     className?: string
+
     variant?: 'default' | 'success' | 'danger' | 'primary'
     style?: 'filled' | 'outlined'
     size?: 'small' | 'medium' | 'large'
     children: ReactNode
 }
 
-const LinkComponent = ({ className, variant = 'default', style = 'filled', size = 'medium', children, ...props }: LinkProps): ReactNode => {
+const LinkComponent = ({
+                           className,
+
+                           variant = 'default',
+                           style = 'filled',
+                           size = 'medium',
+                           children,
+
+                           ...props
+}: LinkProps): ReactNode => {
     return (
         <NextLink className={cn(style === 'filled' ? ButtonVariants({ filled: variant }) : ButtonVariants({ outlined: variant }), ButtonVariants({ size }), className)} {...props}>{children}</NextLink>
     )
