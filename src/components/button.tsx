@@ -5,7 +5,7 @@ import { cn } from '@/libs/utils'
 
 interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'style'> {
     className?: string
-    variant?: 'default' | 'success' | 'danger' | 'primary' | 'secondary'
+    variant?: 'default' | 'success' | 'danger' | 'warning' | 'primary' | 'secondary'
     style?: 'filled' | 'outlined'
     size?: 'small' | 'medium' | 'large'
     loading?: boolean
@@ -19,6 +19,7 @@ const variants = cva(
                 default: 'bg-palette-default-primary hover:bg-palette-default-secondary disabled:bg-palette-default-tertiary',
                 success: 'bg-palette-success-primary hover:bg-palette-success-secondary disabled:bg-palette-success-tertiary',
                 danger: 'bg-palette-danger-primary hover:bg-palette-danger-secondary disabled:bg-palette-danger-tertiary',
+                warning: 'bg-palette-warning-primary hover:bg-palette-warning-secondary disabled:bg-palette-warning-tertiary',
                 primary: 'bg-palette-gray-5 hover:bg-palette-gray-4 disabled:bg-palette-gray-3',
                 secondary: 'bg-palette-primary hover:bg-palette-gray-1 disabled:bg-palette-gray-2 text-palette-gray-5',
             },
@@ -26,6 +27,7 @@ const variants = cva(
                 default: 'border-2 border-palette-default-primary hover:bg-palette-default-primary disabled:border-palette-default-secondary',
                 success: 'border-2 border-palette-success-primary hover:bg-palette-success-primary disabled:border-palette-success-secondary',
                 danger: 'border-2 border-palette-danger-primary hover:bg-palette-danger-primary disabled:border-palette-danger-secondary',
+                warning: 'border-2 border-palette-warning-primary hover:bg-palette-warning-primary disabled:border-palette-warning-secondary',
                 primary: 'border-2 border-palette-gray-5 hover:bg-palette-gray-5 disabled:border-palette-gray-4',
                 secondary: 'border-2 border-palette-primary hover:bg-palette-primary disabled:border-palette-gray-2 hover:text-palette-gray-5',
             },
@@ -47,7 +49,7 @@ const ButtonComponent = ({
                              loading = false,
 
                              ...props
-}: ButtonProps): ReactNode => {
+                         }: ButtonProps): ReactNode => {
     return (
         <button className={cn(style === 'filled' ? variants({ filled: variant }) : variants({ outlined: variant }), variants({ size }), className)} disabled={loading} {...props}>
             <ImSpinner8 className={cn('absolute animate-spin', loading ? 'opacity-100' : 'opacity-0', size === 'large' ? 'h-4 w-4' : size === 'medium' ? 'h-3.5 w-3.5' : 'w-3 h-3')} />
