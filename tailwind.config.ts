@@ -15,7 +15,10 @@ const config: Config = {
             },
             colors: {
                 palette: {
-                    background: 'var(--palette-background)',
+                    background: {
+                        primary: 'var(--palette-background-primary)',
+                        secondary: 'var(--palette-background-secondary)',
+                    },
                     primary: 'var(--palette-primary)',
                     secondary: 'var(--palette-secondary)',
                     default: {
