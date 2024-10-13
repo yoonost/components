@@ -25,7 +25,8 @@ html {
 }
 
 html.light {
-    --palette-background: #FFFFFF;
+    --palette-background-primary: #FFFFFF;
+    --palette-background-secondary: #d6d6d6;
     --palette-primary: #000000;
     --palette-secondary: #828794;
     --palette-gray-1: #404452;
@@ -36,7 +37,8 @@ html.light {
 }
 
 html.dark {
-    --palette-background: #14161A;
+    --palette-background-primary: #14161A;
+    --palette-background-secondary: #1d1e25;
     --palette-primary: #EBECF0;
     --palette-secondary: #A4A8B2;
     --palette-gray-1: #D3D6DB;
@@ -47,5 +49,5 @@ html.dark {
 }
 
 html, body {
-    @apply font-sans text-palette-primary bg-palette-background w-full h-full;
+    @apply font-sans text-palette-primary bg-palette-background-primary w-full h-full;
 }
