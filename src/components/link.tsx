@@ -6,7 +6,7 @@ import { cn } from '@/libs/utils'
 interface LinkProps extends NextLinkProps {
     className?: string
 
-    variant?: 'default' | 'success' | 'danger' | 'primary'
+    variant?: 'default' | 'success' | 'danger' | 'warning' | 'primary'
     style?: 'filled' | 'outlined'
     size?: 'small' | 'medium' | 'large'
     children: ReactNode
