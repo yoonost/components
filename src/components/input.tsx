@@ -15,7 +15,7 @@ interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' 
     size?: 'small' | 'medium' | 'large'
 }
 
-const inputVariants = cva('border bg-palette-gray-5 px-3 py-2 rounded-md outline-none transition', {
+const inputVariants = cva('border bg-palette-gray-5 disabled:bg-palette-background-secondary px-3 py-2 rounded-md outline-none transition', {
     variants: {
         severity: {
             success: 'border-palette-success-primary',
